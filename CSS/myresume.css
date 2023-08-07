@@ -1,0 +1,322 @@
+body {
+  background: rgb(31, 31, 31);
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  padding: 1em;
+  margin-top: 1.5vh;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.nav li a {
+  font-family: "Inter", sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.menu li:hover::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  display: block;
+  transition: all 0.3s ease;
+  bottom: 25%;
+}
+.menu li:hover::after {
+  width: 2.5%;
+  height: 1px;
+  top: 10vh;
+  background-color: #fff;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+/*Container for menu button  */
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/*  Creating the menu button */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 6px;
+  width: 32px;
+  border-radius: 3px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  /*  transforms the hamburger icon into a cross  */
+  transform: rotate(-45deg);
+}
+.edu {
+  color: rgb(152, 224, 242);
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  font-weight: medium;
+  display: flex;
+  font-size: 50px;
+  top: 8vh;
+  left: 12vw;
+}
+
+.isiEdu {
+  position: relative;
+  top: -10vh;
+}
+
+.tahun,
+.jenjang {
+  color: white;
+  font-family: "Merriweather", serif;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.tahun {
+  text-align: justify;
+  position: relative;
+  left: 0;
+  top: 206vh;
+}
+.jenjang {
+  text-align: justify;
+  position: relative;
+  left: 25vw;
+  top: 134vh;
+}
+.header1,
+.header2,
+.header3,
+.header4 {
+  margin-bottom: 15vh;
+}
+
+.header5,
+.header6,
+.header7,
+.header8 {
+  margin-bottom: 10vh;
+}
+
+.header7,
+.header8 {
+  bottom: 175vh;
+}
+
+.p1 {
+  color: rgb(111, 111, 192);
+  position: relative;
+  font-size: medium;
+  margin: 0;
+  top: -185vh;
+  left: 30vw;
+}
+
+.p2 {
+  color: rgb(121, 121, 195);
+  position: relative;
+  font-size: medium;
+  left: 30vw;
+  top: -185vh;
+}
+
+.p5,
+.p6 {
+  color: aqua;
+  position: relative;
+  font-size: medium;
+  left: 30vw;
+  top: -186vh;
+}
+
+.p3,
+.p4 {
+  color: aqua;
+  position: relative;
+  font-size: medium;
+  left: 30vw;
+  top: -185vh;
+}
+.line {
+  position: relative;
+  top: 11vh;
+}
+.line1 {
+  border-left: 3px solid rgb(197, 230, 77);
+  display: flex;
+  height: 10vh;
+  position: relative;
+  bottom: 119vh;
+  margin-bottom: 0;
+  left: 33vw;
+}
+
+.line2 {
+  border-left: 3px solid rgb(197, 230, 77);
+  display: flex;
+  height: 10vh;
+  position: relative;
+  bottom: 112vh;
+  margin-bottom: 0;
+  left: 33vw;
+}
+
+.line3 {
+  border-left: 3px solid rgb(197, 230, 77);
+  display: flex;
+  height: 10vh;
+  position: relative;
+  bottom: 103vh;
+  margin-bottom: 0;
+  left: 33vw;
+}
+
+.exp {
+  color: rgb(152, 224, 242);
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  font-weight: medium;
+  display: flex;
+  font-size: 50px;
+  bottom: 90vh;
+  left: 12vw;
+}
+
+.tahun2,
+.exp2 {
+  color: white;
+  font-family: "Merriweather", serif;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.tahun2 {
+  position: relative;
+  left: 0.5vw;
+  top: 90vh;
+}
+
+.header9,
+.header10,
+.header11,
+.header12,
+.header13,
+.header14 {
+  margin-bottom: 15vh;
+}
+
+.exp2 {
+  text-align: justify;
+  position: relative;
+  left: 25vw;
+  top: 35vh;
+}
+
+.line4,
+.line5 {
+  border-left: 3px solid rgb(197, 230, 77);
+  margin-bottom: 10vh;
+  display: flex;
+  height: 10vh;
+  position: relative;
+  bottom: 187vh;
+  left: 33vw;
+}
+
+.skl {
+  color: rgb(152, 224, 242);
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  font-weight: medium;
+  display: flex;
+  font-size: 50px;
+  top: -180vh;
+  left: 12vw;
+  margin: 0;
+  padding: 0;
+}
+
+.isiSkl {
+  color: white;
+  font-family: "Merriweather", serif;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+h2 {
+  position: relative;
+  left: 30vw;
+  bottom: 175vh;
+}
+.list1,
+.list2,
+.list3,
+.list4 {
+  position: relative;
+  left: 20vw;
+  bottom: 175vh;
+}
+
+.tool {
+  color: cornflowerblue;
+  position: relative;
+  left: 20vw;
+  top: -175vh;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <link rel="shortcut icon" href="/Images/Logo.jpeg" />
+    <link rel="stylesheet" href="/CSS/gallery.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Raleway:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <section class="nav">
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/HTML/about.html">About Me</a></li>
+          <li><a href="/HTML/myresume.html">My Journey</a></li>
+          <li><a href="/HTML/gallery.html">Gallery</a></li>
+          <li><a href="/HTML/contact.html">Contact Me</a></li>
+          <li><a href="/Images/CV.png">My Resume</a></li>
+        </ul>
+      </section>
+
+      <div class="container">
+        <h1>Video Gallery</h1>
+
+        <div class="video-container">
+            <div class="video"> <video src="/Videos/untitled.mp4" muted></video></div>
+            <div class="video"> <video src="/Videos/Short Video.mp4" muted></video></div>
+            <div class="video"> <video src="/Videos/Trailer.mp4"></video muted></div>
+            <div class="video"> <video src="/Videos/welcoming.mp4" muted></video></div>
+        </div>
+
+        <div class="popup-video">
+            <span>&times;</span>
+            <video src="/Videos/untitled.mp4" muted autoplay controls></video>
+        </div>
+
+        <div class="more">
+            <h2>More Videos</h2>
+            <h2>You Can Visit This Through Google Drive Link</h2>
+        </div>
+
+        <a class="link" href="https://drive.google.com/drive/folders/1coZ2jZvGkLZ2h5xWQsD2fVfs6Rcj5yWA?usp=drive_link" target="_blank">Click me</a>
+
+      </div>
+
+      <script>
+        document.querySelectorAll('.video-container video').forEach(vid => {
+
+            vid.onclick = () =>{
+                document.querySelector('.popup-video').style.display = 'block';
+                document.querySelector('.popup-video video').src = vid.getAttribute('src');
+            }
+        });	
+    
+            document.querySelector('.popup-video span').onclick = () => {
+            document.querySelector('.popup-video').style.display = 'none';		
+            document.querySelector('.popup-video video').pause(); 
+            
+        }
+      </script>
+    
+</body>
+</html>

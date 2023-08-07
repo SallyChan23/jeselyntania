@@ -1,0 +1,474 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: auto;
+  background: rgb(31, 31, 31);
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  padding: 1em;
+  margin-top: 2vw;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.nav li a {
+  font-family: "Inter", sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.menu li:hover::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  display: block;
+  transition: all 0.3s ease;
+  bottom: 25%;
+}
+.menu li:hover::after {
+  width: 2.5%;
+  height: 1px;
+  top: 10vh;
+  background-color: #fff;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+/*Container for menu button  */
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/*  Creating the menu button */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 6px;
+  width: 32px;
+  border-radius: 3px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  /*  transforms the hamburger icon into a cross  */
+  transform: rotate(-45deg);
+}
+
+.profile-picture {
+  display: flex;
+  margin-top: 0;
+  position: relative;
+  top: 4vh;
+  left: 20vw;
+  object-fit: cover;
+  height: 50vh;
+  width: 22vw;
+  border-radius: 40%;
+}
+
+.hello {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  color: white;
+  text-align: left;
+  top: 13vw;
+  left: 45.5vw;
+}
+.name {
+  display: flex;
+  font-family: "Merriweather", serif;
+  color: white;
+  position: relative;
+  text-align: left;
+  top: 31vh;
+  font-size: 3rem;
+  font-weight: lighter;
+  margin: auto;
+  left: 45.5vw;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  text-align: left;
+  bottom: 18vh;
+  left: 45.5vw;
+}
+.wrapper .static-txt {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts {
+  margin-left: 10px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  color: #fc6d6d;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #fc6d6d;
+  animation: typing 3s steps(12) infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
+
+
+@media screen and (max-device-width: 768px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    margin-top: 70px;
+    left: 100px;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  #menu-toggle:checked ~ .menu li {
+    height: 2.5em;
+    padding: 0.5em;
+  }
+  .menu > li {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    margin: 0;
+    left: 5vh;
+    padding: 0.5em 0;
+    width: 100%;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+  body {
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .profile-picture {
+    display: flex;
+    margin-top: 0;
+    position: relative;
+    top: 25vh;
+    left: 30vw;
+    object-fit: cover;
+    width: 0;
+    border-radius: 40%;
+  }
+
+  .hello {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    color: white;
+    text-align: center;
+    top: 90vh;
+    left: 37vw;
+  }
+  .name {
+    display: flex;
+    font-family: "Merriweather", serif;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 92vh;
+    font-size: 3rem;
+    font-weight: lighter;
+    margin: auto;
+    left: 30vw;
+  }
+
+  .wrapper {
+    display: flex;
+    position: relative;
+    text-align: left;
+    top: 43vh;
+    left: 21vw;
+  }
+  .wrapper .static-txt {
+    color: #fff;
+    font-size: 70px;
+    font-weight: 400;
+  }
+  .wrapper .dynamic-txts {
+    margin-left: 10px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  .dynamic-txts li {
+    list-style: none;
+    color: #fc6d6d;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100% {
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid #fc6d6d;
+    animation: typing 3s steps(12) infinite;
+  }
+  @keyframes typing {
+    40%,
+    60% {
+      left: calc(100% + 30px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-device-width: 500px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 70px;
+    font-size: 20px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  #menu-toggle:checked ~ .menu li {
+    height: 2.5em;
+    padding: 0.5em;
+  }
+  .menu > li {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    margin: 0;
+    left: 10vh;
+    padding: 0.5em 0;
+    width: 100%;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+  body {
+    margin: auto;
+    overflow-x: hidden;
+  }
+
+  .profile-picture {
+    display: flex;
+    margin-top: 0;
+    position: relative;
+    top: 30vh;
+    left: 40vw;
+    object-fit: cover;
+    width: 0;
+    border-radius: 40%;
+  }
+
+  .hello {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    color: white;
+    text-align: center;
+    top: 50vh;
+    left: 27vw;
+  }
+  .name {
+    display: flex;
+    font-family: "Merriweather", serif;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 55vh;
+    font-size: 3rem;
+    font-weight: lighter;
+    margin: auto;
+    left: 15vw;
+  }
+
+  .wrapper {
+    display: flex;
+    position: relative;
+    text-align: left;
+    top: 10vh;
+    left: 17vw;
+  }
+  .wrapper .static-txt {
+    margin-left: 100px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+  }
+  .wrapper .dynamic-txts {
+    margin-top: 9vh;
+    margin-left: -180px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  .dynamic-txts li {
+    list-style: none;
+    color: #fc6d6d;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100% {
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid #fc6d6d;
+    animation: typing 3s steps(12) infinite;
+  }
+  @keyframes typing {
+    40%,
+    60% {
+      left: calc(100% + 30px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+}
