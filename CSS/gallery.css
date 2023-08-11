@@ -132,7 +132,7 @@
     justify-content: center;
     padding: 10px;
   }
-  
+   
   .container .video-container .video {
     height: 550px;
     width: 350px;
@@ -254,6 +254,6 @@
 
     .container{
       position: relative;
-      top: 16vh;
+      top: 35vh;
     }
   }

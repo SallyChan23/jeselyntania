@@ -126,6 +126,9 @@ header{
   left: 35vw;
 }
 .wrapper .icon{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   margin: 0 20px; 
   text-align: center;
   cursor: pointer;
@@ -259,5 +262,17 @@ header{
   }
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
+  }
+
+  .wrapper{
+    position: relative;
+    top: 50vh;
+    left: 5vw;
+  }
+  
+  header{
+    position: relative;
+    top: 50vh;
+    text-align: center;
   }
 }

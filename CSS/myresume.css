@@ -52,7 +52,7 @@ body {
 .menu {
   display: flex;
   flex-direction: row;
-  list-style-type: none;
+  list-style-type: none; 
   margin: 0;
   padding: 0;
 }
@@ -280,6 +280,11 @@ html{
   }
   .row-1 section .icon{
     left: -60px;
+  }
+
+  .isi{
+    position: relative;
+    top: 40vh;
   }
 }
 @media(max-width: 440px){
