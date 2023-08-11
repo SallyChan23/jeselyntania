@@ -123,10 +123,10 @@ header{
   display: inline-flex;
   position: relative;
   top: 25vh;
-  left: 37vw;
+  left: 35vw;
 }
 .wrapper .icon{
-  margin: 0 20px;
+  margin: 0 20px; 
   text-align: center;
   cursor: pointer;
   display: flex;
@@ -221,4 +221,43 @@ header{
 .wrapper .email:hover .tooltip,
 .wrapper .email:hover .tooltip:before{
   background: #259bd2;
+}
+
+@media (max-width: 768px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    margin-top: 70px;
+    left: 100px;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  #menu-toggle:checked ~ .menu li {
+    height: 2.5em;
+    padding: 0.5em;
+  }
+  .menu > li {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    margin: 0;
+    left: 5vh;
+    padding: 0.5em 0;
+    width: 100%;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
 }

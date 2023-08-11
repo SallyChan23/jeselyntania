@@ -251,4 +251,9 @@
     .container .popup-video video {
       width: 95%;
     }  
+
+    .container{
+      position: relative;
+      top: 16vh;
+    }
   }
